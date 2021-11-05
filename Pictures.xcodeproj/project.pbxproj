@@ -27,13 +27,6 @@
 			remoteGlobalIDString = AEE12DCA2734CEF20031C5BB;
 			remoteInfo = Pictures;
 		};
-		AEE12DEC2734CEF70031C5BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEE12DC32734CEF10031C5BB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEE12DCA2734CEF20031C5BB;
-			remoteInfo = Pictures;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +43,6 @@
 		AEE12DDC2734CEF60031C5BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEE12DE12734CEF70031C5BB /* PicturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE12DE52734CEF70031C5BB /* PicturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesTests.swift; sourceTree = "<group>"; };
-		AEE12DEB2734CEF70031C5BB /* PicturesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicturesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +54,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AEE12DDE2734CEF70031C5BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE12DE82734CEF70031C5BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +113,6 @@
 			children = (
 				AEE12DCB2734CEF20031C5BB /* Pictures.app */,
 				AEE12DE12734CEF70031C5BB /* PicturesTests.xctest */,
-				AEE12DEB2734CEF70031C5BB /* PicturesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,24 +176,6 @@
 			productReference = AEE12DE12734CEF70031C5BB /* PicturesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AEE12DEA2734CEF70031C5BB /* PicturesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEE12DFB2734CEF70031C5BB /* Build configuration list for PBXNativeTarget "PicturesUITests" */;
-			buildPhases = (
-				AEE12DE72734CEF70031C5BB /* Sources */,
-				AEE12DE82734CEF70031C5BB /* Frameworks */,
-				AEE12DE92734CEF70031C5BB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEE12DED2734CEF70031C5BB /* PBXTargetDependency */,
-			);
-			name = PicturesUITests;
-			productName = PicturesUITests;
-			productReference = AEE12DEB2734CEF70031C5BB /* PicturesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,10 +190,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					AEE12DE02734CEF70031C5BB = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = AEE12DCA2734CEF20031C5BB;
-					};
-					AEE12DEA2734CEF70031C5BB = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = AEE12DCA2734CEF20031C5BB;
 					};
@@ -248,7 +210,6 @@
 			targets = (
 				AEE12DCA2734CEF20031C5BB /* Pictures */,
 				AEE12DE02734CEF70031C5BB /* PicturesTests */,
-				AEE12DEA2734CEF70031C5BB /* PicturesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,13 +226,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AEE12DDF2734CEF70031C5BB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEE12DE92734CEF70031C5BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,13 +256,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEE12DE72734CEF70031C5BB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -316,11 +263,6 @@
 			isa = PBXTargetDependency;
 			target = AEE12DCA2734CEF20031C5BB /* Pictures */;
 			targetProxy = AEE12DE22734CEF70031C5BB /* PBXContainerItemProxy */;
-		};
-		AEE12DED2734CEF70031C5BB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEE12DCA2734CEF20031C5BB /* Pictures */;
-			targetProxy = AEE12DEC2734CEF70031C5BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -562,50 +504,6 @@
 			};
 			name = Release;
 		};
-		AEE12DFC2734CEF70031C5BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iarwinscott.PicturesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pictures;
-			};
-			name = Debug;
-		};
-		AEE12DFD2734CEF70031C5BB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.iarwinscott.PicturesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Pictures;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -632,15 +530,6 @@
 			buildConfigurations = (
 				AEE12DF92734CEF70031C5BB /* Debug */,
 				AEE12DFA2734CEF70031C5BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEE12DFB2734CEF70031C5BB /* Build configuration list for PBXNativeTarget "PicturesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEE12DFC2734CEF70031C5BB /* Debug */,
-				AEE12DFD2734CEF70031C5BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

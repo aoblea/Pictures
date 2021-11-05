@@ -13,12 +13,14 @@ enum Endpoint {
     case list(page: String, limit: String)
 }
 
-// MARK: - Private
-private extension Endpoint {
+extension Endpoint {
     var url: URL {
         return urlComponents.url!
     }
-    
+}
+
+// MARK: - Private
+private extension Endpoint {
     var base: String {
         return "https://picsum.photos"
     }

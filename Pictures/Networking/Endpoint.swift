@@ -13,9 +13,10 @@ enum Endpoint {
     case list(page: String, limit: String)
 }
 
+// MARK: - Private
 private extension Endpoint {
     var url: URL {
-        return components.url!
+        return urlComponents.url!
     }
     
     var base: String {
@@ -39,7 +40,7 @@ private extension Endpoint {
         }
     }
     
-    var components: URLComponents {
+    var urlComponents: URLComponents {
         var components = URLComponents(string: base)!
         components.path = path
         components.queryItems = queryItems

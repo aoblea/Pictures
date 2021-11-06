@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - IBOutlets
     @IBOutlet weak var photosTableView: UITableView! {
         didSet {
             photosTableView.dataSource = self
@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         }
     }
 
+    // MARK: - Properties
     private lazy var viewModel: HomeViewModel = {
         return HomeViewModel()
     }()
@@ -53,10 +54,24 @@ extension HomeViewController: HomeViewModelDelegate {
     func homeViewModel(_ homeViewModel: HomeViewModel, didReceivePhotos received: Bool) {
         if received == true {
             photosTableView.reloadData()
+        } else {
+            navigationItem.title = "Could not retrieve list."
         }
     }
     
     func homeViewModel(_ homeViewModel: HomeViewModel, didReceiveError error: Error) {
-        // TODO: - Handle Error
+        print(error)
+    }
+}
+
+// MARK: - Navigation
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailViewController else { return }
+        
+        if let indexPath = photosTableView.indexPathForSelectedRow {
+            destination.viewModel.photo = viewModel.photos[indexPath.row]
+            
+        }
     }
 }

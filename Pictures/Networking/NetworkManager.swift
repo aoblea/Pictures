@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum NetworkError: Error {
     case requestFailed
@@ -38,6 +39,25 @@ class NetworkManager {
                     } catch {
                         print(error)
                     }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }.resume()
+    }
+    
+    func getImage(urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url)
+        
+        dataTask(with: request) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    
+                    let image = UIImage(data: data)
+                    completion(.success(image ?? UIImage.remove))
+                    
                 case .failure(let error):
                     completion(.failure(error))
                 }

@@ -19,7 +19,7 @@ class HomeViewModel {
     private let networkManager: NetworkManager
     
     var title: String {
-        return "Choose a photo"
+        return "Choose a photographer"
     }
     
     init(networkManager: NetworkManager = NetworkManager()) {

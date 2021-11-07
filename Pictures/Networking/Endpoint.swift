@@ -9,7 +9,7 @@ import Foundation
 
 // https://picsum.photos/v2/list?page=2&limit=100
 
-enum Endpoint {
+public enum Endpoint {
     case list(page: String, limit: String)
 }
 

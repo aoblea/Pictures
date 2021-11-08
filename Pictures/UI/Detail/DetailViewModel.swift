@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
+///  A protocol that allows communication between an object and DetailViewModel.
 protocol DetailViewModelDelegate: AnyObject {
+    /// A delegate method that takes in a DetailViewModel and sets a didFinishImageDownload boolean.
+    /// ```
+    /// self.viewDelegate?.detailViewModel(self, didFinishImageDownload: true) // Image received.
+    /// ```
     func detailViewModel(_ detailViewModel: DetailViewModel, didFinishImageDownload: Bool)
 }
 
+/// An object that holds the business logic and is used to communicate events with DetailViewController
 class DetailViewModel {
     
     // MARK: - Properties
@@ -34,6 +40,7 @@ class DetailViewModel {
         self.networkManager = networkManager
     }
     
+    /// A method that assigns a success response to the image property or send a failed response.
     func loadImage() {
         guard let photo = photo else { return }
         

@@ -8,17 +8,28 @@
 import Foundation
 import UIKit
 
+/// Handles networking errors.
 enum NetworkError: Error {
+    /// An indication that the network request failed.
     case requestFailed
+    /// An indication that the data retrieved is invalid.
     case invalidData
+    /// An indication that the response code is not good.
     case responseUnsuccessful
 }
 
+/// A manager that handles networking.
 class NetworkManager {
     private lazy var session: URLSession = {
         return URLSession(configuration: .default)
     }()
     
+    /// Fetch a list of photos.
+    ///
+    /// - Parameters:
+    ///    - completion: The closure will call when function finishes fetching the list of photos. This completion takes a `Result`:
+    ///    - [Photo]:  A list of photos.
+    ///    - NetworkError: A network error.
     func fetchPhotos(completion: @escaping (Result<[Photo], NetworkError>) -> Void) {
         let endpoint = Endpoint.list(page: "1", limit: "50")
         let request = URLRequest(url: endpoint.url)
@@ -46,6 +57,13 @@ class NetworkManager {
         }.resume()
     }
     
+    /// Get an image from a url string.
+    ///
+    /// - Parameters:
+    ///   - urlString: A string formatted url used to form a request.
+    ///   - completion: The closure will call when function finishes fetching the list of photos. This completion takes a `Result`:
+    ///   - UIImage: When successful, an UIImage is available.
+    ///   - NetworkError: When failure, an error is provided.
     func getImage(urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)

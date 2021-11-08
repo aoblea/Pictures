@@ -5,6 +5,7 @@
 //  Created by Arwin Oblea on 11/5/21.
 //
 
+/// A model representing a photo.
 struct Photo: Decodable {
     let id: String
     let author: String

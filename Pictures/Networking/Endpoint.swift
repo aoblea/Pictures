@@ -9,7 +9,11 @@ import Foundation
 
 // https://picsum.photos/v2/list?page=2&limit=100
 
-public enum Endpoint {
+/// Contains a list of endpoints.
+enum Endpoint {
+    /// An endpoint that will be used to return a list of photos.
+    /// - page: A string that  represents a page number.
+    /// - limit: A string that represent the limit of how many photos are retrieved.
     case list(page: String, limit: String)
 }
 
